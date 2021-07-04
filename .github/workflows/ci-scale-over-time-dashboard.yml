@@ -1,0 +1,14 @@
+name: CI - Autoscaling-over-time Dashboard
+on:
+  pull_request:
+    paths:
+    - 'src/**'
+  
+jobs:
+  solution:
+    name: Runtime (Solution)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Solution
+      run: dotnet build ./src/AzureAutoscalingToolbox.Samples.sln --configuration Release
