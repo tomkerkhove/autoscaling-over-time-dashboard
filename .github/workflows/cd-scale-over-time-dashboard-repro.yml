@@ -29,7 +29,7 @@ jobs:
       run: dotnet publish ./src/AzureAutoscalingToolbox.Samples.StatefulAppInstances --configuration Release --output ${{ env.OUTPUT_PATH }}
 
     - name: Publish Azure Function Artifact
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v2
       with:
           name: ${{ env.ARTIFACT_NAME }}
           path: ${{ env.OUTPUT_PATH }}
